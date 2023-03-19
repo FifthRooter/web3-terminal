@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const newsFilePath = path.join(process.cwd(), "news.json");
+const newsFilePath = path.join(process.cwd(), "public", "news.json");
 
 export default async function handler(req, res) {
   if (req.method === "POST") {

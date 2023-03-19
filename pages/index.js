@@ -16,6 +16,8 @@ export default function Home() {
   const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
   const [gpt3Response, setGPT3Response] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
 
   const toggleModal = () => setShowModal(!showModal);
 
@@ -65,6 +67,38 @@ export default function Home() {
     }
   }
 
+  const handleAddNews = async () => {
+    // Check if both fields are filled
+    if (title === "" || url === "") {
+      alert("Both fields must be filled out");
+      return;
+    }
+
+    // Add the new news object to the news.json file and display it in the terminal
+    try {
+      const response = await fetch("/api/addNews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, url }),
+      });
+
+      if (response.ok) {
+        const newsItem = await response.json();
+        console.log("News item added:", newsItem);
+      } else {
+        console.error("Error adding news item");
+      }
+    } catch (error) {
+      console.error("Error adding news item:", error);
+    }
+
+    // Clear the input fields
+    setTitle("");
+    setUrl("");
+  };
+
   return (
     <div className="container">
       {showModal && (
@@ -99,6 +133,25 @@ export default function Home() {
             </p>
           </div>
         ))}
+      </div>
+      <div className="input-container">
+        <input
+          type="text"
+          className="news-input"
+          placeholder="Article Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          className="news-input"
+          placeholder="Article URL"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <button className="add-news-button" onClick={handleAddNews}>
+          Add News
+        </button>
       </div>
     </div>
   );
