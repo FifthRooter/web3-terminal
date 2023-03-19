@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Royalties have helped fuel the growth of the non-fungible token (NFT) economy, said Yat Siu, co-founder of computer gaming firm Animoca Brands."
+  },
+  {
+    "text": "“All of these innovations happen because of the fact that royalties were possible,” Siu told CoinDesk TV’s “First Mover” on Friday."
+  },
+  {
+    "text": "The Hong Kong-based firm has taken a firm stance in support of digital creators via its NFT licenses, which Siu said were issued as a way for creators to have a “legal way of protecting their royalty rights.” Siu recently emphasized the company’s position during the annual NFT Paris conference, underscoring the importance of creator rights and royalties within Web3."
+  },
+  {
+    "text": "Despite a bear market sweeping much of 2022, the NFT industry amassed more than $24 billion worth of sales."
+  },
+  {
+    "text": "“That means that billions of dollars went to creators but, more importantly, an even larger number went to owners of the assets of these entities that fueled an industry that made it possible to create companies like Blur, OpenSea or Magic Eden,” he said."
+  },
+  {
+    "text": "Siu said that without royalties there wouldn't be enough money in the ecosystem to support project innovations."
+  },
+  {
+    "text": "“If you remove that, then you actually end up sending the industry, from our perspective, backwards,” he said."
+  },
+  {
+    "text": "Now, the firm is looking to build the next OpenSea in the MENA (Middle East-North Africa) region."
+  },
+  {
+    "text": "The firm recently invested in Nuqtah, Saudi Arabia's first licensed non-fungible token (NFT) marketplace, he said."
+  },
+  {
+    "text": "“We view it [the investment] a little bit like when we made our investment in OpenSea back in 2019,” Siu told CDTV. ”One of the reasons we made that investment was because we wanted to sort of help build the rails of that NFT economy, which back then was nonexistent, and today has become fairly meaningful.”"
+  },
+  {
+    "text": "According to Siu, major market players such as Japan have regional NFT participants. The MENA region, however, has yet to establish one significant player, he said."
+  },
+  {
+    "text": "Animoca Brands wants to kick-start NFT infrastructure development in Saudi Arabia, which Siu said the firm is doing by backing Nuqtah."
+  },
+  {
+    "text": "Siu did not disclose the amount of the private investment but said that no government money was involved."
+  },
+  {
+    "text": "Read more: How Web3 Animation Project 'The Gimmicks' Survives a Crypto Winter / CULTURE Week"
+  }
+]

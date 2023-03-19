@@ -3,6 +3,7 @@
 export default async function handler(req, res) {
   try {
     const { prompt } = req.body;
+    console.log(`OpenAI API prompt: ${prompt}`);
 
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -12,14 +13,10 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.7,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-        max_tokens: 200,
-        stream: false,
-        n: 1,
+        messages: [
+          { role: "system", content: "You are a news article summarizer bot" },
+          { role: "user", content: prompt },
+        ],
       }),
     });
 

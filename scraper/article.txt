@@ -1,0 +1,50 @@
+[
+  {
+    "text": "Editor's note: This story has been updated to reflect the FDIC's denial of Reuters' report on Thursday.",
+    "href": null
+  },
+  {
+    "text": "The Federal Deposit Insurance Corporation has denied reports that prospective purchasers of Signature Bank would have to stop doing business with crypto.",
+    "href": null
+  },
+  {
+    "text": "The FDIC responded to a Reuters report citing two anonymous sources who claimed that the buyer of Signature Bank would have to agree to give up all crypto business at the bank. Following publication, a spokesperson for the FDIC told the news service that it \"would not require divestment of crypto activities as part of any sale,\" pointing to previous comments from Chairman Martin Gruenberg that the FDIC is not looking to prohibit any particular activity by banks.",
+    "href": "https://www.reuters.com/business/finance/us-regulator-taps-piper-sandler-new-bid-sell-silicon-valley-bank-sources-2023-03-15/"
+  },
+  {
+    "text": "Initial reports that the FDIC was forcing Signature Bank's buyer to abandon crypto activities appeared to confirm suspicions that regulators targeted the bank because it did business with the crypto industry—sparking a furious response from the industry in question.",
+    "href": "https://decrypt.co/123494/why-signature-bank-really-shut-down"
+  },
+  {
+    "text": "Earlier this week, Barney Frank, an ex-congressman who helped pen the Dodd-Frank Act, told CNBC that banking regulators shuttered the bank to send \"a very strong anti-crypto message.\" Frank also served on the Signature Bank board.",
+    "href": "https://decrypt.co/123346/signature-bank-shut-down-anti-crypto-barney-frank"
+  },
+  {
+    "text": "The New York Department of Financial Services was quick to dismiss his claim, saying in a statement the decision to place Signature into receivership \"was based on the current status of the bank and its ability to do business in a safe and sound manner.\"",
+    "href": null
+  },
+  {
+    "text": "Only bidders with existing banking charters will be allowed to review the bank's financials before submitting an offer, according to Reuters.",
+    "href": null
+  },
+  {
+    "text": "The FDIC said it will accept bids until Friday for Signature Bank, which it shuttered on Sunday, and Silicon Valley Bank, which it shut down on March 10. For Silicon Valley Bank, or SVB, this will be the regulator's second attempt to sell the institution after a failed auction on Sunday.",
+    "href": "https://decrypt.co/123270/feds-shut-down-signature-bank-say-signature-and-silicon-valley-bank-depositors-will-be-made-whole"
+  },
+  {
+    "text": "The FDIC tried to sell what remains of SVB over the weekend, but couldn't find a buyer willing to acquire the entire bank. The sources told Reuters that the FDIC would prefer to auction off both banks in their entirety, but will entertain bids for individual parts if it's unsuccessful.",
+    "href": null
+  },
+  {
+    "text": "Signature Bank shares started trading on Nasdaq under the SBNY ticker in 2004. By early 2022, its share price hit an all-time high of $365.71 per share.",
+    "href": null
+  },
+  {
+    "text": "The bank also offered an instant settlement network for digital payments, Signet, which was a rival to a similar service at Silvergate Bank.",
+    "href": null
+  },
+  {
+    "text": "By the time Nasdaq halted trading on SBNY on March 10, it's shares were trading for $70.",
+    "href": null
+  }
+]

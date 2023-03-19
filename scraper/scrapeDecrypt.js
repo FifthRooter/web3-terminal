@@ -29,7 +29,6 @@ async function scrapeDecrypt() {
     // fs.writeFileSync(newsFilePath, JSON.stringify(articles, null, 2));
 
     await browser.close();
-    console.log(`Decrypt articles: ${articles}`);
 
     return articles;
   } catch (error) {

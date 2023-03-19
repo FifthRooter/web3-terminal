@@ -73,10 +73,15 @@ body {
 
 .modal-content {
   background-color: black;
+  text: center;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 5rem;
   color: lime;
-  min-width: 300px;
+  width: 40%; /* add this line */
+  height: 45%%; /* add this line */
+  overflow-y: auto; /* add this line to enable scrolling if the content overflows */
+  max-width: 100%; /* add this line to prevent the modal from going beyond the viewport width */
+  max-height: 100%;
 }
 
 .modal-close-button {
@@ -115,6 +120,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
   margin-top: 20px;
   padding: 20px;
   border: 1px solid white;
@@ -142,4 +148,21 @@ body {
 .add-news-button:hover {
   background: lime;
   color: black;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  color: lime;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid lime;
+  border-radius: 50%;
+  border-top-color: lime;
+  animation: spinner 0.6s linear infinite;
 }

@@ -29,7 +29,6 @@ async function scrapeCoindesk() {
   // Save the articles to news.json
   //   const newsFilePath = path.join(__dirname, "news.json");
   //   fs.writeFileSync(newsFilePath, JSON.stringify(articles, null, 2));
-  console.log(`Coindesk articles: ${articles}`);
   return articles;
 }
 

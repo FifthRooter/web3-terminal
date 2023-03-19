@@ -6,14 +6,13 @@ const newsFilePath = path.join(process.cwd(), "public", "news.json");
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      const { title, headline } = req.body;
+      const { title, link } = req.body;
 
       const newsData = JSON.parse(fs.readFileSync(newsFilePath, "utf8"));
 
       const newsItem = {
-        id: newsData.length + 1,
         title,
-        headline,
+        link,
       };
 
       newsData.push(newsItem);

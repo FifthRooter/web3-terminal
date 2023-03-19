@@ -45,26 +45,40 @@ export default function Home() {
   };
 
   const handleGPT3Response = async (title, index) => {
-    try {
-      const prompt = `Write a fun, engaging paragraph summary of the following news title (~60 word), and add an appropriate emoji at the end of it:\n${title}`;
-      const response = await axios.post("/api/openaiApi", { prompt });
-      handleModalButtonClick(index);
-      fetchGPT3Response(response.data);
-    } catch (error) {
-      console.error("Error fetching GPT-3 response:", error);
+    handleModalButtonClick(index);
+
+    const articleLink = articles[index]?.link;
+    const prompt = `Write a 300 word factual summary of the following article:\n`;
+
+    // Check if there's a scraper for the link's hostname
+    console.log(`Article link: ${articleLink}`);
+    console.log(`Prompt: ${prompt}`);
+    const linkHostname = new URL(articleLink).hostname;
+    if (linkHostname === "decrypt.co") {
+      try {
+        const articleContent = await fetchArticleContent(articleLink);
+        const formatedArticleContent = JSON.stringify(articleContent);
+        const finalPrompt = `${prompt}\n\nUse the following content for the summary as a source of information: ${formatedArticleContent}`;
+        const response = await axios.post("/api/openaiApi", {
+          prompt: finalPrompt,
+        });
+        setGPT3Response(response.data);
+      } catch (error) {
+        console.error(error);
+        return;
+      }
+    } else {
+      alert("Error: No existing scraper to use for this site.");
+      return;
     }
   };
 
-  async function fetchGPT3Response(prompt) {
-    try {
-      setIsLoading(true);
-      const res = await axios.post("/api/openaiApi", { prompt });
-      setGPT3Response(res.data);
-    } catch (error) {
-      console.error("Error fetching GPT-3 response:", error);
-    } finally {
-      setIsLoading(false);
-    }
+  async function fetchArticleContent(url) {
+    console.log(url);
+    const response = await axios.get(
+      `/api/scrapeArticle?url=${encodeURIComponent(url)}`
+    );
+    return response.data.content;
   }
 
   const handleAddNews = async () => {
@@ -104,7 +118,8 @@ export default function Home() {
       {showModal && (
         <Modal
           onClose={toggleModal}
-          articleTitle={articles[selectedArticleIndex]?.title}
+          responseText={gpt3Response}
+          isLoading={isLoading}
         />
       )}
       <div className="header-container">
