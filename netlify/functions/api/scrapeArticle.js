@@ -1,6 +1,6 @@
 // pages/api/scrapeArticle.js
-import scrapeDecryptArticle from "../../scraper/scrapers/decrypt";
-import scrapeCoindeskArticle from "../../scraper/scrapers/coindesk";
+import scrapeDecryptArticle from "../../../scraper/scrapers/decrypt";
+import scrapeCoindeskArticle from "../../../scraper/scrapers/coindesk";
 
 export default async function handler(req, res) {
   const { url } = req.query;

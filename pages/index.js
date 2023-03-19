@@ -6,11 +6,11 @@ import Modal from "./components/Modal";
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const removeArticle = async (article) => {
-  await axios.post("/api/removeArticle", article);
+  await axios.post("/netlify/functions//api/removeArticle", article);
 };
 
 export default function Home() {
-  const { data, error } = useSWR("/api/news", fetcher);
+  const { data, error } = useSWR("/netlify/functions/api/news", fetcher);
   const [showModal, setShowModal] = useState(false);
   const [articles, setArticles] = useState([]);
   const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
@@ -56,7 +56,7 @@ export default function Home() {
       const articleContent = await fetchArticleContent(articleLink);
       const formatedArticleContent = JSON.stringify(articleContent);
       const finalPrompt = `${prompt}\n\nUse the following content for the summary as a source of information: ${formatedArticleContent}`;
-      const response = await axios.post("/api/openaiApi", {
+      const response = await axios.post("/netlify/functions/api/openaiApi", {
         prompt: finalPrompt,
       });
       setGPT3Response(response.data);
@@ -69,7 +69,7 @@ export default function Home() {
   async function fetchArticleContent(url) {
     console.log(url);
     const response = await axios.get(
-      `/api/scrapeArticle?url=${encodeURIComponent(url)}`
+      `/netlify/functions/api/scrapeArticle?url=${encodeURIComponent(url)}`
     );
     return response.data.content;
   }
@@ -83,7 +83,7 @@ export default function Home() {
 
     // Add the new news object to the news.json file and display it in the terminal
     try {
-      const response = await fetch("/api/addNews", {
+      const response = await fetch("/netlify/functions/api/addNews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

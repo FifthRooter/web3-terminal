@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const { start } = require("../../scraper/scraper");
+const { start } = require("../../../scraper/scraper");
 start();
 
 export default function handler(req, res) {
