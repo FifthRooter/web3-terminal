@@ -6,7 +6,7 @@ import Modal from "./components/Modal";
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const removeArticle = async (article) => {
-  await axios.post("/netlify/functions//api/removeArticle", article);
+  await axios.post("/netlify/functions/api/removeArticle", article);
 };
 
 export default function Home() {

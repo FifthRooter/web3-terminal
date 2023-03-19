@@ -1,6 +1,6 @@
 [build]
   command = "yarn build"
-  functions = "functions"
+  functions = "netlify/functions"
   publish = "out"
 
 [[redirects]]
