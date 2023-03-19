@@ -45,30 +45,23 @@ export default function Home() {
   };
 
   const handleGPT3Response = async (title, index) => {
+    setGPT3Response("");
+
     handleModalButtonClick(index);
 
     const articleLink = articles[index]?.link;
     const prompt = `Write a 300 word factual summary of the following article:\n`;
 
-    // Check if there's a scraper for the link's hostname
-    console.log(`Article link: ${articleLink}`);
-    console.log(`Prompt: ${prompt}`);
-    const linkHostname = new URL(articleLink).hostname;
-    if (linkHostname === "decrypt.co") {
-      try {
-        const articleContent = await fetchArticleContent(articleLink);
-        const formatedArticleContent = JSON.stringify(articleContent);
-        const finalPrompt = `${prompt}\n\nUse the following content for the summary as a source of information: ${formatedArticleContent}`;
-        const response = await axios.post("/api/openaiApi", {
-          prompt: finalPrompt,
-        });
-        setGPT3Response(response.data);
-      } catch (error) {
-        console.error(error);
-        return;
-      }
-    } else {
-      alert("Error: No existing scraper to use for this site.");
+    try {
+      const articleContent = await fetchArticleContent(articleLink);
+      const formatedArticleContent = JSON.stringify(articleContent);
+      const finalPrompt = `${prompt}\n\nUse the following content for the summary as a source of information: ${formatedArticleContent}`;
+      const response = await axios.post("/api/openaiApi", {
+        prompt: finalPrompt,
+      });
+      setGPT3Response(response.data);
+    } catch (error) {
+      console.error(error);
       return;
     }
   };
@@ -128,24 +121,28 @@ export default function Home() {
       <div className="terminal">
         {articles.map((article, index) => (
           <div key={index} className="news-headline">
-            <p>
-              {index + 1}.{" "}
+            <div className="number-title-container">
+              <p>{index + 1}.</p>
               <a href={article.link} target="_blank" rel="noopener noreferrer">
                 {article.title}
               </a>
+            </div>
+            <div className="button-container">
               <span
                 className="article-modal-button"
                 onClick={() => {
                   handleGPT3Response(article.title, index);
                 }}
-              ></span>
+              >
+                summarize
+              </span>
               <span
                 className="article-remove-button"
                 onClick={() => handleRemoveArticle(index)}
               >
-                -
+                remove
               </span>
-            </p>
+            </div>
           </div>
         ))}
       </div>

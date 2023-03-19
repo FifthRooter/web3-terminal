@@ -16,7 +16,7 @@ body {
   border: 2px solid white;
   border-radius: 4px;
   width: 70%;
-  height: 60%;
+  height: 50%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,9 @@ body {
 }
 
 .news-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -38,10 +41,20 @@ body {
   text-decoration: underline;
 }
 
-.news-headline p {
-  color: lime;
-  margin-top: 0.5rem;
-  font-size: 1rem;
+.news-headline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.number-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
@@ -99,20 +112,23 @@ body {
 }
 
 .article-modal-button {
-  display: inline-block;
-  background-color: lime;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  margin-left: 8px;
+  padding: 10px;
+  margin-right: 5px;
+  border: 0.5px solid white;
+  border-radius: 2px;
+  background: transparent;
+  color: lime;
+  font-family: "Courier New", Courier, monospace;
   cursor: pointer;
 }
 
 .article-remove-button {
-  display: inline-block;
+  padding: 10px;
+  border-radius: 2px;
+  border: 0.5px solid white;
+  background: transparent;
   color: lime;
-  font-size: 12px;
-  margin-left: 8px;
+  font-family: "Courier New", Courier, monospace;
   cursor: pointer;
 }
 

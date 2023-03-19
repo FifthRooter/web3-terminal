@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-async function scrapeCoindeskArticle(url) {
+export default async function scrapeCoindeskArticle(url) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "networkidle2" });
